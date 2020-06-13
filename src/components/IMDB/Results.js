@@ -27,7 +27,7 @@ class Results extends React.Component {
         this.props.searchResults.Response === 'True'
           ? this.props.searchResults.Search.map((el) => {
               return (
-                <div className="col-sm text-dark m-3" key={el.imdbID}>
+                <div className="col-sm text-dark m-4 " key={el.imdbID}>
                   <div
                     className="card"
                     style={{ width: '250px', height: '450px' }}
