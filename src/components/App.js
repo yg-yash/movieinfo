@@ -25,7 +25,7 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/singleResult/:id" component={SingleResult} />
-          <Route path="/" exact component={SearchPage} />{' '}
+          <Route path="/" exact component={SearchPage} />
         </Switch>
       </BrowserRouter>
     </Provider>
