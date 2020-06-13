@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchSingleResult } from "../../actions/index";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchSingleResult } from '../../store/actions/index';
 
 class SingleResult extends Component {
   componentDidMount() {
@@ -17,7 +17,7 @@ class SingleResult extends Component {
                 className="card-img mx-auto"
                 src={this.props.movieDetails.Poster}
                 alt="unavailable"
-                style={{ width: "200px" }}
+                style={{ width: '200px' }}
               />
 
               <p className="card-text">{this.props.movieDetails.Runtime}</p>
@@ -56,13 +56,13 @@ class SingleResult extends Component {
             </div>
           </div>
         ) : (
-          "No Movie Yert"
+          'No Movie Yert'
         )}
       </div>
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return { movieDetails: state.movieinfo.movieDetails };
 };
 export default connect(mapStateToProps, { fetchSingleResult })(SingleResult);

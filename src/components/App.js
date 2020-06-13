@@ -1,15 +1,15 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import thunk from "redux-thunk";
-import { createStore, applyMiddleware, compose } from "redux";
-import reducers from "../reducers/index";
-import SearchPage from "./IMDB/SearchPage";
-import Header from "./UI/Header";
-import SingleResult from "./IMDB/SingleResult";
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reducers from '../store/reducers/index';
+import SearchPage from './IMDB/SearchPage';
+import Header from './UI/Header';
+import SingleResult from './IMDB/SingleResult';
 
 const composeEnhancers =
-  typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
         // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
       })
@@ -25,7 +25,7 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/singleResult/:id" component={SingleResult} />
-          <Route path="/" exact component={SearchPage} />{" "}
+          <Route path="/" exact component={SearchPage} />{' '}
         </Switch>
       </BrowserRouter>
     </Provider>

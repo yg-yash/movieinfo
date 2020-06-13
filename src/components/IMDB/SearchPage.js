@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { fetchResults } from "../../actions/index";
-import { connect } from "react-redux";
-import Results from "./Results";
+import React, { Component } from 'react';
+import { fetchResults } from '../../store/actions/index';
+import { connect } from 'react-redux';
+import Results from './Results';
 
 class SearchPage extends Component {
   state = {
-    search: ""
+    search: '',
   };
-  onInputChange = e => {
+  onInputChange = (e) => {
     this.setState({ search: e.target.value });
   };
 
-  onFormSubmit = e => {
+  onFormSubmit = (e) => {
     e.preventDefault();
     this.props.fetchResults(this.state.search);
   };

@@ -1,7 +1,12 @@
-import { FETCH_RESULTS, FETCH_SINGLE_RESULT } from "./actionTypes";
-import axios from "../api/axios";
+import {
+  FETCH_RESULTS,
+  FETCH_SINGLE_RESULT,
+  LOADING_RESULT,
+} from './actionTypes';
+import axios from '../../api/axios';
 
-export const fetchResults = searchValue => async dispatch => {
+export const fetchResults = (searchValue) => async (dispatch) => {
+  dispatch({ type: LOADING_RESULT });
   try {
     const response = await axios.get(`?apiKey=b36f9996&s=${searchValue}`);
 
@@ -11,7 +16,8 @@ export const fetchResults = searchValue => async dispatch => {
   }
 };
 
-export const fetchSingleResult = id => async dispatch => {
+export const fetchSingleResult = (id) => async (dispatch) => {
+  dispatch({ type: LOADING_RESULT });
   try {
     const response = await axios.get(`?apiKey=b36f9996&i=${id}`);
 
