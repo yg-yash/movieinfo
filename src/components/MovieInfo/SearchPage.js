@@ -35,7 +35,10 @@ class SearchPage extends Component {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-block btn-primary btn-outline-secondary mt-3 text-dark">
+              <button
+                className="btn btn-block btn-primary btn-outline-secondary mt-3 text-dark"
+                disabled={this.state.search < 1}
+              >
                 <i className="fa fa-search" aria-hidden="true"></i>Search
               </button>
             </form>

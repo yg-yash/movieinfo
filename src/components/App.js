@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from '../store/reducers/index';
-import SearchPage from './IMDB/SearchPage';
+import SearchPage from './MovieInfo/SearchPage';
 import Header from './UI/Header';
-import SingleResult from './IMDB/SingleResult';
+import SingleResult from './MovieInfo/SingleResult';
 
 const composeEnhancers =
   typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
